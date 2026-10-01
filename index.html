@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>index</title>
+</head>
+<body>
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Letter for Tinkerbelle 💙</title><style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #071a3d, #0b4f8a, #48a9e6);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 600px;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 25px;
+        padding: 35px 25px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        opacity: 0.85;
+        margin-bottom: 30px;
+    }
+
+    button {
+        border: none;
+        border-radius: 50px;
+        padding: 14px 28px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        background: white;
+        color: #07529a;
+        transition: 0.25s;
+    }
+
+    button:hover {
+        transform: scale(1.06);
+    }
+
+    #letter {
+        display: none;
+        text-align: left;
+        margin-top: 25px;
+        line-height: 1.7;
+        animation: fadeIn 0.8s ease;
+    }
+
+    .heart {
+        font-size: 45px;
+        animation: float 2s infinite ease-in-out;
+    }
+
+    .signature {
+        text-align: right;
+        margin-top: 25px;
+        font-style: italic;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+
+    .bubble {
+        position: fixed;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.12);
+        pointer-events: none;
+    }
+</style></head><body><div class="container">
+    <div class="card"> <div class="heart">🎂🎂🎂</div>
+
+    <h1>HAPPY BIRTHDAYY Tinkerbelle!</h1>
+    <p class="subtitle">I made a simple letter for you hope u like it! </p>
+
+    <button id="openBtn">HOYYY!!!! Open the Letter 💌</button>
+
+    <div id="letter">
+        <p>
+            Heyyy Tinkerbelle!! First of all, Happy Birthdayy!!! I just wanted to make this little website-letter
+            because a normal message didn't feel special enough to express my gratitude for the things you have done for me.
+        </p>
+
+        <p>
+            I hope you like this letter, even if its simple hehe.
+            Some things that I couldn't say, I will express them through this letter. 🥹
+        </p>
+
+        <p>
+            Thank you so so much for being someone I can appreciate. Thank you for being the person I could always rely on. Thank you so much, Tinkerbelle, for helping me heal from my past and for motivating me always. Thank you Tinkerbelle for always making me laugh starting from the Soda pop meme all the way till now, and for being the person i make memories with. 🤍🤍🤍
+        </p>
+
+        <p> 
+            Thank you so much talaga, Tinkerbelle! you would probably have no idea on how grateful I am. To be honest, I couldn't imagine where I would be without you because youve helped me even when u were facing your own problems, and as someone who tried to understand you, i cant imagine how difficult that might have been for you. 🤍💖
+        </p>
+
+        <p> 
+            This might be quite repetitive na, but I dont care HHAHAH, it's for u naman my Big sister, Twin, and best bff. I really hope we can continue us helping each other even if we seperrate schools. Honestly, when i first met u even I didn't guess na you would be the one I would  most cry for if i lost u. anywayss, I could continue yapping but im sure ur not reading allat HAHHAHAH, sooo ill end this letter naa.🥹🥹
+        </p>
+
+        <p> 
+            I really hope all of your wishes come true and you succeed in life, Tinkerbelle!! I really hope to see you with a big smile that I can never take serious, wheter its in serious situations. Rest assured, I wish you the happiest birthday, Tinkerbelle!! may you live a long and happy life! HOYYYYYY!!😳😳
+
+        </p>
+
+        <p> 
+            You are probably like "ONMA I AINT READING ALLAT," soo last na to HAHHAHA.Just rememberr, if you are ever feeling down, demotivated, or stressed, just take time to read this letter because you matter, youre loved by me and our whole cof, and kaya mo yan, Tinkerbelle! I will always be here believing in you, and I will always be proud of you. For the first time Im saying I love u as a sister Tinkerbelle!!🥳🥳 Againn happy birthdayyy. 🤍🤍🤍 DONT CRYY AHH HAHAHAH
+        </p>
+
+        <p class="pure">
+            — From HOYYYYYYYY PA HOTSPOT 🥳
+        </p>
+    </div>
+
+</div>
+
+</div><script>
+    const button = document.getElementById("openBtn");
+    const letter = document.getElementById("letter");
+
+    button.addEventListener("click", () => {
+        letter.style.display = "block";
+        button.textContent = "Letter Opened 💙";
+        button.disabled = true;
+    });
+
+    for (let i = 0; i < 15; i++) {
+        const bubble = document.createElement("div");
+
+        const size = Math.random() * 35 + 10;
+
+        bubble.className = "bubble";
+        bubble.style.width = size + "px";
+        bubble.style.height = size + "px";
+        bubble.style.left = Math.random() * 100 + "vw";
+        bubble.style.top = Math.random() * 100 + "vh";
+
+        document.body.appendChild(bubble);
+    }
+</script></body>
+</html>
+
+</body>
+</html>
