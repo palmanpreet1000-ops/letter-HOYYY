@@ -1,191 +1,488 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>index</title>
-</head>
-<body>
-<!DOCTYPE html><html lang="en">
-<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Letter for Tinkerbelle 💙</title><style>
-    * {
-        box-sizing: border-box;
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffb6d9">
+<title>Happy Birthday Festejos! 🎀</title>
 
-    body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #071a3d, #0b4f8a, #48a9e6);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow-x: hidden;
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Pacifico&display=swap');
 
-    .container {
-        width: 90%;
-        max-width: 600px;
-        text-align: center;
-        padding: 30px;
-    }
+:root {
+  --pink:#ffacd1;
+  --light:#fff0f7;
+  --hot:#f45ca1;
+  --dark:#92365f;
+  --border:#ffc6e0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:Nunito,sans-serif;color:var(--dark);
+  background:radial-gradient(#ffc8e0 1.4px,transparent 1.4px),linear-gradient(135deg,#fff4fa,#ffe2ef);
+  background-size:23px 23px,100% 100%;overflow-x:hidden
+}
+button,input{font:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:focus-visible{outline:3px solid #bd4c86;outline-offset:3px}
+h1,h2,h3,p{overflow-wrap:anywhere}
+h2{font-family:Pacifico,cursive;font-weight:400;font-size:clamp(1.8rem,6vw,2.6rem);margin:0 0 12px}
+p{line-height:1.8}
+.hidden{display:none!important}
+.script{font-family:Pacifico,cursive}
+.primary{
+  background:linear-gradient(135deg,#ff78b7,#ee4f98);color:white;
+  padding:14px 23px;border-radius:999px;font-weight:900;
+  box-shadow:0 5px 0 #c94380;transition:.2s
+}
+.primary:hover{transform:translateY(-2px)}
+.primary:active{transform:translateY(2px)}
+.secondary{
+  background:white;color:var(--hot);border:2px solid var(--border);
+  border-radius:999px;padding:11px 17px;font-weight:800
+}
+#intro{
+  min-height:100vh;min-height:100svh;display:grid;place-items:center;
+  padding:25px 16px;text-align:center;
+  background:radial-gradient(ellipse at top,#fffaff,transparent 65%),linear-gradient(150deg,#ffc4e0,#ffebf5,#fcb1d3)
+}
+.intro-card{
+  width:min(100%,460px);background:#ffffffc9;border:3px dashed #ffabd0;
+  border-radius:35px;padding:30px 20px;box-shadow:0 15px 40px #d86a9c25
+}
+.bunny{font-size:82px;line-height:1.4;animation:hop 2s ease-in-out infinite}
+#intro h1,header h1{font-family:Pacifico,cursive;font-weight:400;color:#e74b96}
+#intro h1{font-size:clamp(2.1rem,9vw,3.3rem);margin:10px 0}
+#intro p{margin:10px 0 22px}
+header{text-align:center;padding:25px 14px 10px}
+header .mini{letter-spacing:3px;font-size:.75rem;font-weight:900;color:#d85a96}
+header h1{font-size:clamp(2.4rem,10vw,4rem);margin:8px 0;text-shadow:2px 3px white}
+header p{margin:0}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:15px 12px 25px}
+nav a{
+  text-decoration:none;color:#b8427d;background:white;border:1px solid var(--border);
+  padding:8px 13px;border-radius:99px;font-size:.83rem;font-weight:900
+}
+main{width:min(100% - 26px,850px);margin:0 auto}
+.section{
+  margin:20px 0;padding:clamp(20px,5vw,32px);border:2px solid var(--border);
+  background:#fffffff0;border-radius:28px;box-shadow:0 8px 0 #f8c8df;
+  text-align:center;scroll-margin-top:12px
+}
+.sticker-row{font-size:1.7rem;letter-spacing:7px;margin-bottom:12px}
+.note{background:#fff2f8;border:2px dashed #ffc1dc;border-radius:18px;padding:18px;text-align:left;line-height:1.9}
+.envelope{
+  margin:20px auto;width:min(100%,280px);height:150px;background:#ffb6d8;
+  border-radius:12px;box-shadow:0 8px 0 #e77eaf;display:grid;place-items:center;
+  font-size:75px;transition:transform .3s
+}
+.envelope:active{transform:scale(.97)}
+.letter-content{
+  text-align:left;padding:20px;margin-top:20px;background:#fff5fa;
+  border:2px solid #ffd0e5;border-radius:20px;animation:appear .5s ease
+}
+.letter-content p{white-space:pre-line}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
+.tile{min-width:0;border:2px solid #ffd0e5;background:#fff7fb;border-radius:19px;padding:15px 10px}
+.memory{display:flex;flex-direction:column;align-items:center;gap:9px;min-width:0}
+.photo-frame{
+  width:100%;aspect-ratio:1;display:grid;place-items:center;border-radius:14px;
+  overflow:hidden;background:repeating-linear-gradient(45deg,#ffe0ef,#ffe0ef 10px,#fff2f8 10px,#fff2f8 20px);
+  color:#e85b9b;font-size:2.6rem
+}
+.photo-frame img{width:100%;height:100%;object-fit:cover}
+.memory label{color:#c44883;font-size:.8rem;font-weight:900;cursor:pointer}
+.memory input{width:100%;font-size:.75rem}
+.caption{font-size:.82rem;font-weight:800;line-height:1.5}
+.reason{
+  min-height:115px;display:grid;place-items:center;gap:8px;font-weight:800;
+  color:#c44782;cursor:pointer;transition:transform .2s,background .2s
+}
+.reason:hover{transform:translateY(-3px)}
+.reason .answer{font-size:.9rem;font-weight:700;line-height:1.5}
+.game-heart{
+  background:white;border:2px solid #ffb5d5;border-radius:20px;min-height:90px;
+  font-size:2rem;box-shadow:0 4px 0 #f8c9df
+}
+#gameResult{min-height:35px;font-weight:900;color:#df438c}
+.secret-wrap{padding:22px;border:2px dashed #ffafd1;background:#fff4fa;border-radius:20px}
+.secret-button{
+  display:block;margin:auto;width:80px;height:80px;border-radius:50%;
+  background:#ffc2df;color:#c13c7d;font-size:2.2rem;box-shadow:0 5px 0 #e58ab7
+}
+#secretText{margin-top:20px;padding:15px;background:white;border-radius:16px;animation:appear .5s ease}
+footer{text-align:center;padding:35px 15px 50px;color:#c34c84;font-weight:800}
+#toast{
+  position:fixed;bottom:18px;left:50%;transform:translateX(-50%);
+  width:max-content;max-width:calc(100% - 28px);padding:12px 18px;
+  background:#a83e72;color:white;border-radius:99px;font-weight:800;z-index:20;
+  box-shadow:0 5px 20px #7d174744;text-align:center
+}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:30}
+.floaty{position:fixed;z-index:0;pointer-events:none;opacity:.55;animation:drift 8s linear infinite}
+main,header,nav,footer{position:relative;z-index:1}
+@keyframes hop{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-9px) rotate(3deg)}}
+@keyframes appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes drift{from{transform:translateY(105vh) rotate(0)}to{transform:translateY(-15vh) rotate(360deg)}}
+@media(min-width:620px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:380px){.grid{gap:8px}.tile{padding:10px 7px}nav{gap:6px}nav a{font-size:.76rem;padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
 
-    .card {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(255,255,255,0.25);
-        border-radius: 25px;
-        padding: 35px 25px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    }
+<body>
 
-    h1 {
-        font-size: 2.2rem;
-        margin-bottom: 10px;
-    }
+<section id="intro">
+  <div class="intro-card">
+    <div style="color:#f0529b;font-size:1.5rem">🎀 ✧･ﾟ: ✧･ﾟ: 🎀</div>
+    <div class="bunny">🐰</div>
+    <div style="font-size:1.5rem">♡ 🧁 ♡</div>
+    <h1>Happy Birthday,<br>Festejos!</h1>
+    <p>A pink world made just for you ♡</p>
+    <p> surprises waiting inside...</p>
 
-    .subtitle {
-        opacity: 0.85;
-        margin-bottom: 30px;
-    }
+    <!-- FIXED: the button directly opens the main page -->
+    <button class="primary" id="begin"
+      onclick="document.getElementById('intro').style.display='none';document.getElementById('site').classList.remove('hidden');window.scrollTo(0,0);">
+      Open your surprise! 🎁
+    </button>
 
-    button {
-        border: none;
-        border-radius: 50px;
-        padding: 14px 28px;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        background: white;
-        color: #07529a;
-        transition: 0.25s;
-    }
+    <p style="font-size:.8rem;margin-top:20px">made with ♡ & a bit of magic</p>
+  </div>
+</section>
 
-    button:hover {
-        transform: scale(1.06);
-    }
+<div id="site" class="hidden">
+<header>
+  <div class="mini">୨୧ · ˚ ༘ ⋆｡♡˚</div>
+  <div class="bunny" style="font-size:60px">🐰🎀</div>
+  <h1>It's Your Special Day!</h1>
+  <p>A special birthday page for <b>Precious</b> ♡</p>
+  <div style="font-size:1.5rem;margin-top:10px">🍓 🧁 🎀 🩷 🌷</div>
+</header>
 
-    #letter {
-        display: none;
-        text-align: left;
-        margin-top: 25px;
-        line-height: 1.7;
-        animation: fadeIn 0.8s ease;
-    }
+<nav>
+  <a href="#letter">💌 Letter</a>
+  <a href="#memories">📸 Photos</a>
+  <a href="#reasons">💗 Reasons</a>
+  <a href="#game">🎮 Game</a>
+  <a href="#secret">🔒 Secret</a>
+</nav>
 
-    .heart {
-        font-size: 45px;
-        animation: float 2s infinite ease-in-out;
-    }
+<main>
+<section class="section">
+  <div class="sticker-row">🎂 ✨ 🎀 ✨ 🎂</div>
+  <h2>Happy Birthdayyy!</h2>
+  <p>To someone who deserves extra happiness, extra cake, extra DCC, and an EXTRA amount of pink! ♡</p>
+  <div class="tile">
+    <div style="font-size:2.7rem">🎁</div>
+    <b>Your birthday mission:</b>
+    <p>Smile at least once, enjoy your day, and remember DCC! 🩷</p>
+  </div>
+  <br>
+  <button class="primary" id="wishBtn">Make a birthday wish ✨</button>
+  <p id="wishResult" aria-live="polite"></p>
+</section>
 
-    .signature {
-        text-align: right;
-        margin-top: 25px;
-        font-style: italic;
-    }
+<section class="section" id="letter">
+  <div class="sticker-row">💌 🎀 💌</div>
+  <h2>A Little Letter</h2>
+  <p>Someone made something for you. Tap the envelope! ♡</p>
+  <button class="envelope" id="envelope" aria-label="Open your letter">💌</button>
+  <br>
+  <button class="primary" id="letterBtn">Open my letter 💗</button>
+  <article class="letter-content hidden" id="letterContent">
+    <h3 class="script" style="color:#e94d97;font-size:1.6rem">Dear Festejos, ♡</h3>
+    <!-- CUSTOMIZE YOUR LETTER HERE -->
+    <p id="letterWords">Heyyy Festejos!! First of all, HAPPY BIRTHDAYYY!! 🎀💗
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+I made this little website just for you because its your special day.
 
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-8px);
-        }
-    }
+Thank you for being someone I can appreciate. I hope this new teenage chapter of your life brings you more happiness and lots of baliwness with laughterr.
 
-    .bubble {
-        position: fixed;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.12);
-        pointer-events: none;
-    }
-</style></head><body><div class="container">
-    <div class="card"> <div class="heart">🎂🎂🎂</div>
+Always remember that you matter, your feelings matter, and you deserve good things. I hope all your wishes come true and that you keep finding reasons to smile, even on days where you feel absolute 0 or worth nothing.
 
-    <h1>HAPPY BIRTHDAYY Tinkerbelle!</h1>
-    <p class="subtitle">I made a simple letter for you hope u like it! </p>
+Happy birthday once again, Festejos!! Never forget how special you are. 🎀
 
-    <button id="openBtn">HOYYY!!!! Open the Letter 💌</button>
+With lots of appreciation,
+Your dcc delivery driver HUAHAHAUAAhAHAH ♡</p>
+    <p class="script" style="text-align:right;color:#e94d97">— made with love & bows 🎀</p>
+  </article>
+</section>
 
-    <div id="letter">
-        <p>
-            Heyyy Tinkerbelle!! First of all, Happy Birthdayy!!! I just wanted to make this little website-letter
-            because a normal message didn't feel special enough to express my gratitude for the things you have done for me.
-        </p>
-
-        <p>
-            I hope you like this letter, even if its simple hehe.
-            Some things that I couldn't say, I will express them through this letter. 🥹
-        </p>
-
-        <p>
-            Thank you so so much for being someone I can appreciate. Thank you for being the person I could always rely on. Thank you so much, Tinkerbelle, for helping me heal from my past and for motivating me always. Thank you Tinkerbelle for always making me laugh starting from the Soda pop meme all the way till now, and for being the person i make memories with. 🤍🤍🤍
-        </p>
-
-        <p> 
-            Thank you so much talaga, Tinkerbelle! you would probably have no idea on how grateful I am. To be honest, I couldn't imagine where I would be without you because youve helped me even when u were facing your own problems, and as someone who tried to understand you, i cant imagine how difficult that might have been for you. 🤍💖
-        </p>
-
-        <p> 
-            This might be quite repetitive na, but I dont care HHAHAH, it's for u naman my Big sister, Twin, and best bff. I really hope we can continue us helping each other even if we seperrate schools. Honestly, when i first met u even I didn't guess na you would be the one I would  most cry for if i lost u. anywayss, I could continue yapping but im sure ur not reading allat HAHHAHAH, sooo ill end this letter naa.🥹🥹
-        </p>
-
-        <p> 
-            I really hope all of your wishes come true and you succeed in life, Tinkerbelle!! I really hope to see you with a big smile that I can never take serious, wheter its in serious situations. Rest assured, I wish you the happiest birthday, Tinkerbelle!! may you live a long and happy life! HOYYYYYY!!😳😳
-
-        </p>
-
-        <p> 
-            You are probably like "ONMA I AINT READING ALLAT," soo last na to HAHHAHA.Just rememberr, if you are ever feeling down, demotivated, or stressed, just take time to read this letter because you matter, youre loved by me and our whole cof, and kaya mo yan, Tinkerbelle! I will always be here believing in you, and I will always be proud of you. For the first time Im saying I love u as a sister Tinkerbelle!!🥳🥳 Againn happy birthdayyy. 🤍🤍🤍 DONT CRYY AHH HAHAHAH
-        </p>
-
-        <p class="pure">
-            — From HOYYYYYYYY PA HOTSPOT 🥳
-        </p>
+<section class="section" id="memories">
+  <div class="sticker-row">📸 🧸 🍓</div>
+  <h2>DCC Little Gallery</h2>
+  <p>Choose pictures to preview them in the gallery. For Festejos to see them online too, upload the pictures to GitHub and use their file paths.</p>
+  <div class="grid">
+    <div class="tile memory">
+      <div class="photo-frame" id="frame1">🌷</div>
+      <label>Choose photo 1<input type="file" accept="image/*" data-frame="frame1"></label>
+      <div class="caption">DCC ♡</div>
     </div>
+    <div class="tile memory">
+      <div class="photo-frame" id="frame2">🎀</div>
+      <label>Choose photo 2<input type="file" accept="image/*" data-frame="frame2"></label>
+      <div class="caption">Cutie melody 🩷</div>
+    </div>
+    <div class="tile memory">
+      <div class="photo-frame" id="frame3">🍓</div>
+      <label>Choose photo 3<input type="file" accept="image/*" data-frame="frame3"></label>
+      <div class="caption">Memories to keep ✨</div>
+    </div>
+  </div>
+</section>
 
+<section class="section" id="reasons">
+  <div class="sticker-row">🩷 🌸 🎀 🌸 🩷</div>
+  <h2>Reasons You're Amazing</h2>
+  <p>Tap each card to uncover a  reminder </p>
+  <div class="grid">
+    <button class="tile reason" data-reason="You make normal moments feel funnier. "><span>🌷</span><b>Reason #1</b><span class="answer">Tap to reveal </span></button>
+    <button class="tile reason" data-reason="You have your own goals and talents. 🎀"><span>🎀</span><b>Reason #2</b><span class="answer">Tap to reveal </span></button>
+    <button class="tile reason" data-reason="Your laughter and energy can make u seem like a baliw in 1 second. ☀️"><span>☀️</span><b>Reason #3</b><span class="answer">Tap to reveal </span></button>
+    <button class="tile reason" data-reason="You deserve kindness and respect too. 🩷"><span>🧸</span><b>Reason #4</b><span class="answer">Tap to reveal </span></button>
+    <button class="tile reason" data-reason="There is so much more ahead for you to discover. ✨"><span>✨</span><b>Reason #5</b><span class="answer">Tap to reveal </span></button>
+    <button class="tile reason" data-reason="You are appreciated just as you are. "><span></span><b>Reason #6</b><span class="answer">Tap to reveal ♡</span></button>
+  </div>
+</section>
+
+<section class="section" id="game">
+  <div class="sticker-row">🎮 🐰 🍬</div>
+  <h2>Catch the Hearts!</h2>
+  <p>Tap hearts to collect 5 points and unlock your birthday surprise! 💗</p>
+  <p><b>Score: <span id="score">0</span> / 5</b></p>
+  <div class="grid" id="gameGrid">
+    <button class="game-heart" aria-label="Catch heart">💗</button>
+    <button class="game-heart" aria-label="Catch heart">🎀</button>
+    <button class="game-heart" aria-label="Catch heart">💖</button>
+    <button class="game-heart" aria-label="Catch heart">🌸</button>
+    <button class="game-heart" aria-label="Catch heart">💕</button>
+    <button class="game-heart" aria-label="Catch heart">🩷</button>
+  </div>
+  <p id="gameResult" aria-live="polite">Ready, set, tap! 🎀</p>
+  <button class="secondary" id="resetGame">Play again ↻</button>
+</section>
+
+<section class="section" id="secret">
+  <div class="sticker-row">🔐 🎀 🗝️</div>
+  <h2>A Tiny Secret</h2>
+  <p>There's one more message hidden ...</p>
+  <div class="secret-wrap">
+    <button class="secret-button" id="secretBtn" aria-label="Reveal secret message">♡</button>
+    <p><b>Tap the heart to unlock your surprise!</b></p>
+    <div id="secretText" class="hidden">
+      <div style="font-size:2.5rem">💗🐰💗</div>
+      <h3 class="script" style="color:#e94d97">A little reminder...</h3>
+      <p>Even when it's not your birthday, you still deserve to feel happy. Keep being yourself and never forget that you have so many beautiful careers ahead. Happy birthday, Festejos! </p>
+      <p></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="finale">
+  <div class="sticker-row">🎂 🎉 🎀 🎉 🎂</div>
+  <h2>One Last Surprise!</h2>
+  <p>Ready to fill the screen with  magic?</p>
+  <button class="primary" id="partyBtn">LET'S CELEBRATE!! 🎉</button>
+  <p id="partyText" aria-live="polite"></p>
+</section>
+</main>
+
+<footer>
+  <div style="font-size:2rem">🎀 🐰</div>
+  Made for Festejos 
+  <p style="font-size:.8rem">A little pink page.</p>
+  <button class="secondary" id="topBtn">Back to the top ↑</button>
+</footer>
 </div>
 
-</div><script>
-    const button = document.getElementById("openBtn");
-    const letter = document.getElementById("letter");
+<canvas id="confetti"></canvas>
+<div id="toast" class="hidden" role="status" aria-live="polite"></div>
 
-    button.addEventListener("click", () => {
-        letter.style.display = "block";
-        button.textContent = "Letter Opened 💙";
-        button.disabled = true;
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+
+  // Opening screen: also supports the button's direct click action above.
+  $('begin').addEventListener('click', function(){
+    $('intro').style.display = 'none';
+    $('site').classList.remove('hidden');
+    window.scrollTo(0,0);
+    toast('Welcome to your pink little world! 🎀');
+    burst(70);
+  });
+
+  const wishes = [
+    'May a little bit of magic find you today! ✨',
+    'May your year be full of laughter and lovely surprises! 🎀',
+    'May your dreams grow bigger and your worries feel smaller! 🩷',
+    'May you always find reasons to smile! 🌷'
+  ];
+  $('wishBtn').addEventListener('click',function(){
+    $('wishResult').textContent=wishes[Math.floor(Math.random()*wishes.length)];
+    burst(35);
+  });
+
+  function openLetter(){
+    $('letterContent').classList.remove('hidden');
+    $('envelope').textContent='💖';
+    $('letterBtn').textContent='Your letter is open 💗';
+    $('letterContent').scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  $('letterBtn').addEventListener('click',openLetter);
+  $('envelope').addEventListener('click',openLetter);
+
+  document.querySelectorAll('input[data-frame]').forEach(input=>{
+    input.addEventListener('change',()=>{
+      const file=input.files&&input.files[0];
+      if(!file)return;
+      if(!file.type.startsWith('image/')){
+        toast('Please choose an image file.');return;
+      }
+      if(file.size>8*1024*1024){
+        toast('Choose an image smaller than 8 MB.');input.value='';return;
+      }
+      const reader=new FileReader();
+      reader.onload=()=>{
+        const frame=$(input.dataset.frame);
+        frame.replaceChildren();
+        const img=document.createElement('img');
+        img.src=reader.result;img.alt='Selected birthday memory';
+        frame.appendChild(img);
+      };
+      reader.readAsDataURL(file);
     });
+  });
 
-    for (let i = 0; i < 15; i++) {
-        const bubble = document.createElement("div");
+  document.querySelectorAll('[data-reason]').forEach(card=>{
+    card.addEventListener('click',()=>{
+      const answer=card.querySelector('.answer');
+      const opened=card.dataset.opened==='true';
+      card.dataset.opened=String(!opened);
+      answer.textContent=opened?'Tap to reveal ♡':card.dataset.reason;
+      card.style.background=opened?'#fff7fb':'#ffe4f0';
+    });
+  });
 
-        const size = Math.random() * 35 + 10;
+  let score=0,gameWon=false;
+  function updateGame(){
+    $('score').textContent=score;
+    $('gameResult').textContent=gameWon
+      ?'YOU DID IT!! You unlocked your birthday magic! 🎉💗'
+      :'Ready, set, tap! 🎀';
+    document.querySelectorAll('.game-heart').forEach(btn=>{
+      btn.disabled=gameWon;
+      btn.style.opacity=gameWon?'.65':'1';
+    });
+  }
 
-        bubble.className = "bubble";
-        bubble.style.width = size + "px";
-        bubble.style.height = size + "px";
-        bubble.style.left = Math.random() * 100 + "vw";
-        bubble.style.top = Math.random() * 100 + "vh";
+  document.querySelectorAll('.game-heart').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      if(gameWon)return;
+      score++;
+      btn.textContent=['💖','🌸','🎀','💕','🩷'][Math.floor(Math.random()*5)];
+      btn.style.background='#ffe0ee';
+      if(score>=5){score=5;gameWon=true;burst(90);}
+      updateGame();
+    });
+  });
 
-        document.body.appendChild(bubble);
+  $('resetGame').addEventListener('click',()=>{
+    score=0;gameWon=false;
+    const emojis=['💗','🎀','💖','🌸','💕','🩷'];
+    document.querySelectorAll('.game-heart').forEach((btn,i)=>{
+      btn.textContent=emojis[i];btn.style.background='white';
+    });
+    updateGame();
+  });
+
+  $('secretBtn').addEventListener('click',()=>{
+    const secret=$('secretText');
+    const opening=secret.classList.contains('hidden');
+    secret.classList.toggle('hidden');
+    $('secretBtn').textContent=opening?'💗':'♡';
+    if(opening)burst(35);
+  });
+
+  $('partyBtn').addEventListener('click',()=>{
+    $('partyText').textContent='HAPPY BIRTHDAY, FESTEJOS!!';
+    burst(160);
+    toast('Birthday confetti activated!! 🎉');
+  });
+
+  $('topBtn').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  let toastTimer;
+  function toast(message){
+    const el=$('toast');
+    el.textContent=message;
+    el.classList.remove('hidden');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(()=>el.classList.add('hidden'),2600);
+  }
+
+  // Confetti
+  const canvas=$('confetti'),ctx=canvas.getContext('2d');
+  let pieces=[],animationId=null,resizeTimer;
+  function resizeCanvas(){
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=Math.round(window.innerWidth*dpr);
+    canvas.height=Math.round(window.innerHeight*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  resizeCanvas();
+  window.addEventListener('resize',()=>{
+    clearTimeout(resizeTimer);resizeTimer=setTimeout(resizeCanvas,100);
+  });
+
+  function burst(amount){
+    const colors=['#ff5da9','#ffc4df','#ffffff','#e98abc','#f7d7e8','#ff85c1'];
+    for(let i=0;i<amount;i++){
+      pieces.push({
+        x:Math.random()*window.innerWidth,
+        y:-20-Math.random()*window.innerHeight*.25,
+        vx:(Math.random()-.5)*5,
+        vy:2+Math.random()*5,
+        size:3+Math.random()*6,
+        color:colors[Math.floor(Math.random()*colors.length)],
+        spin:Math.random()*6,
+        life:100+Math.random()*100
+      });
     }
-</script></body>
-</html>
+    if(pieces.length>500)pieces=pieces.slice(-500);
+    if(!animationId)animateConfetti();
+  }
 
+  function animateConfetti(){
+    ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+    pieces=pieces.filter(p=>p.life>0&&p.y<window.innerHeight+30);
+    for(const p of pieces){
+      p.x+=p.vx;p.y+=p.vy;p.vy+=.025;p.spin+=.08;p.life--;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.spin);
+      ctx.fillStyle=p.color;
+      ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.7);
+      ctx.restore();
+    }
+    if(pieces.length){animationId=requestAnimationFrame(animateConfetti);}
+    else{ctx.clearRect(0,0,window.innerWidth,window.innerHeight);animationId=null;}
+  }
+
+  const decorations=['♡','🎀','✧','♡','🌸'];
+  for(let i=0;i<12;i++){
+    const item=document.createElement('div');
+    item.className='floaty';
+    item.textContent=decorations[i%decorations.length];
+    item.style.left=(Math.random()*96)+'vw';
+    item.style.fontSize=(14+Math.random()*19)+'px';
+    item.style.animationDelay=(-Math.random()*8)+'s';
+    item.style.animationDuration=(7+Math.random()*7)+'s';
+    document.body.appendChild(item);
+  }
+
+  updateGame();
+})();
+</script>
 </body>
 </html>
